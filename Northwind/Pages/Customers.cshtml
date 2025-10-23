@@ -1,0 +1,56 @@
+﻿@page 
+@model CustomersModel //Specifies the model type provides data and funtionality for this page 
+@{
+    //This is a C# code block where server side code is executed
+    ViewData[index: "Title"] = "Northwind Customers";
+    //sets the page title in teh view data directy 
+}
+
+<!--OutPuts the vaule as header 1 level heading -->
+<h1>@ViewData[index: "Title"]</h1>
+    <table class="table">
+
+       <thead>
+
+           <tr>
+
+               <th>Customer ID</th>
+
+               <th>Company Name</th>
+
+               <th>Contact Name</th>
+
+               <th>Country</th>
+
+           </tr>
+
+       </thead>
+
+       <tbody>
+
+           <!-- Loops through the resultset of customers and adds the information for
+                each customer to the table -->
+
+           @foreach (var customer in Model.Customers)
+
+           {
+
+               <tr>
+
+                   <td>@customer.CustomerID</td>
+
+                   <td>@customer.CompanyName</td>
+
+                   <td>@customer.ContactName</td>
+
+                   <td>@customer.Country</td>
+
+               </tr>
+
+           }
+
+       </tbody>
+
+   </table>
+   
+    
